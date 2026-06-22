@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 世界杯 | 中文信息站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: #f9f5ed;
+            color: #2b2b2b;
+            line-height: 1.65;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        /* 导航区 */
+        .nav {
+            background: #ffffffdd;
+            backdrop-filter: blur(4px);
+            border-bottom: 1px solid #e3dbcf;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #3f3a32;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            font-size: 0.95rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4f4a42;
+            transition: color 0.15s;
+        }
+        .nav-links a:hover {
+            color: #a45c2c;
+        }
+        /* hero */
+        .hero {
+            padding: 52px 0 36px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2f2a22;
+            margin-bottom: 14px;
+        }
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #5a5349;
+            font-size: 1.05rem;
+        }
+        /* 区块通用 */
+        section {
+            padding: 28px 0 32px;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-left: 4px solid #a86f42;
+            padding-left: 14px;
+            margin-bottom: 18px;
+            color: #332e26;
+        }
+        .text-lead {
+            margin-bottom: 20px;
+            color: #3f3a32;
+        }
+        /* 场景卡片区 */
+        .module-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 20px 0 10px;
+        }
+        .module-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.06);
+            border: 1px solid #eae2d6;
+        }
+        .module-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #3f372d;
+        }
+        .module-card p {
+            color: #4f483e;
+            margin-bottom: 6px;
+        }
+        .module-card .tag {
+            display: inline-block;
+            background: #eae2d6;
+            color: #3f372d;
+            font-size: 0.78rem;
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-top: 6px;
+        }
+        /* 引用块 / 提示框 */
+        .info-box {
+            background: #e8dfd1;
+            border-left: 5px solid #a86f42;
+            padding: 18px 22px;
+            margin: 28px 0 18px;
+            border-radius: 0 6px 6px 0;
+            color: #2f2a22;
+        }
+        .info-box strong {
+            color: #1f1b16;
+        }
+        /* 常见说明 */
+        .faq-item {
+            margin-bottom: 18px;
+            border-bottom: 1px solid #e3dbcf;
+            padding-bottom: 14px;
+        }
+        .faq-item:last-child {
+            border-bottom: 0;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #3f372d;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            color: #504a40;
+            padding-left: 6px;
+        }
+        .faq-a a {
+            color: #8a5c33;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .faq-a a:hover {
+            color: #b2703e;
+        }
+        /* footer */
+        .footer {
+            margin-top: 30px;
+            padding: 28px 0;
+            border-top: 1px solid #e3dbcf;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6a6257;
+        }
+        /* 响应式 */
+        @media (min-width: 640px) {
+            .module-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .module-card {
+                flex: 1 1 28%;
+                min-width: 200px;
+            }
+        }
+        @media (max-width: 500px) {
+            .nav-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <span class="nav-brand">⚽ 2026 中文指南</span>
+            <ul class="nav-links">
+                <li><a href="#intro">本站用途</a></li>
+                <li><a href="#scenes">使用场景</a></li>
+                <li><a href="#faq">常见说明</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- hero -->
+        <div class="hero" id="intro">
+            <h1>关于「世界杯」中文信息站</h1>
+            <p>如果你想快速了解这个网站提供哪些内容、适合什么情况使用，下面整理了三个主要部分：网站定位、典型场景与常规说明。所有信息都围绕 <a href="https://cns-wccup2026.com" style="color:#8a5c33;text-decoration:underline;">世界杯</a> 这一主题展开，力求清晰实用。</p>
+        </div>
+
+        <!-- 介绍 + 定位 -->
+        <section>
+            <h2 class="section-title">网站定位</h2>
+            <p class="text-lead">这是一个面向中文用户的信息汇集页面，并非官方赛事平台。站内主要整合与2026年世界杯有关的动态、赛制说明、球队背景以及观赛参考内容。无论你是刚开始关注，还是想快速查找某个信息片段，这里都尽量用平实的语言整理好了。</p>
+            <div class="info-box">
+                <strong>提示：</strong> 本页属于导航型介绍页，所有指向详细内容的链接都会引导至 <a href="https://cns-wccup2026.com" style="color:#7a4f2b;text-decoration:underline;">世界杯</a> 主站对应栏目。你可以把它当作一个内容索引入口。
+            </div>
+        </section>
+
+        <!-- 三个场景模块 -->
+        <section id="scenes">
+            <h2 class="section-title">典型使用场景</h2>
+            <div class="module-grid">
+                <div class="module-card">
+                    <h3>📋 赛程与分组</h3>
+                    <p>想确认小组赛时间、淘汰赛对阵，或者各代表队的所在小组？主站有按日期排列的赛程表，也会在抽签后更新分组详情。</p>
+                    <span class="tag">快速查找</span>
+                </div>
+                <div class="module-card">
+                    <h3>🏟️ 主办城市 &amp; 场馆</h3>
+                    <p>计划去现场或关注转播？页面整理了北美三国的承办城市、体育场容量和交通接驳要点，方便提前了解场地信息。</p>
+                    <span class="tag">出行参考</span>
+                </div>
+                <div class="module-card">
+                    <h3>📰 球队 &amp; 晋级动态</h3>
+                    <p>从预选赛到决赛圈，哪些球队已经锁定席位，哪些还在争夺名额？这里汇总了已晋级队伍和附加赛情况。</p>
+                    <span class="tag">实力追踪</span>
+                </div>
+            </div>
+            <p style="margin-top:10px;color:#5a5349;">每个模块背后都有对应的详细页面，通过 <a href="https://cns-wccup2026.com" style="color:#8a5c33;text-decoration:underline;">世界杯</a> 主站可以进一步阅读数据和背景。</p>
+        </section>
+
+        <!-- 常见说明 FAQ 摘要 -->
+        <section id="faq">
+            <h2 class="section-title">常见说明</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">这个网站是官方渠道吗？</div>
+                <div class="faq-a">不是。本网站是中文爱好者建立的资料站，内容基于公开信息整理，引用时会标明来源。官方信息请以国际足联（FIFA）发布为准。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">我能在网站上找到直播链接吗？</div>
+                <div class="faq-a">本站不提供直接播放或盗播链接，但会列出中国大陆及海外持权转播商名单。你可以通过 <a href="https://cns-wccup2026.com">世界杯</a> 相关页面查看合作媒体列表。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">数据更新时间是多久？</div>
+                <div class="faq-a">赛程、积分、晋级等核心信息在官方公告后 24 小时内更新。球队名单和场地数据会随着抽签、确认过程同步修正。如果发现遗漏，可以通过站内反馈渠道告知。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">移动端浏览体验如何？</div>
+                <div class="faq-a">页面采用自适应布局，手机和平板均可正常阅读。部分表格在窄屏下会横向滚动，不影响查看。推荐在 <a href="https://cns-wccup2026.com">世界杯</a> 主站使用浏览器打开，功能更完整。</div>
+            </div>
+        </section>
+
+        <!-- 额外的说明块  keep it simple -->
+        <div class="info-box" style="margin-top:10px;">
+            <strong>如果你刚接触这个网站：</strong> 可以先把上面三个场景当作入口，选择你感兴趣的部分深入浏览。所有链接最终都会汇聚到 <a href="https://cns-wccup2026.com" style="color:#7a4f2b;text-decoration:underline;">世界杯</a> 相关内容下，方便你逐步了解2026年赛事的全貌。
+        </div>
+
+        <footer class="footer">
+            <p>内容整理仅供参考，不构成任何官方意见。具体规则以 FIFA 官方文件为准。</p>
+            <p style="margin-top:6px;">—— 2026 中文信息站 · <a href="https://cns-wccup2026.com" style="color:#6a6257;text-decoration:none;">世界杯</a> ——</p>
+        </footer>
+    </div>
+</body>
+</html>
